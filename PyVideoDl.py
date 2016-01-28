@@ -22,7 +22,7 @@
 
 from urllib.request import urlopen
 from urllib.parse import parse_qs
-from time import mktime, localtime
+from os import getlogin, path 
 
 __version__ = 0.2
 __author__ = "Chiheb Nexus"
@@ -165,8 +165,9 @@ class PyVideoDl:
 		"""
 		response = urlopen(direct_url)
 		length = int(response.info()["Content-length"])
+		path_file = "/home/"+getlogin()
 
-		with open(fname, "wb+") as my_file:
+		with open(path.join(path_file, fname), "wb+") as my_file:
 
 			done = 0
 			# FIXME: Buffer size
