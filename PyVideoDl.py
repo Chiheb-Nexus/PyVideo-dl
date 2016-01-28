@@ -103,7 +103,7 @@ class PyVideoDl:
 		"""
 		Manage qualities and types then return choice
 		"""
-		print("\n\tSong title: \x1B[32;10m{0}\x1B[0m".format(title))
+		print("\n\tVideo title: \x1B[32;10m{0}\x1B[0m".format(title))
 
 		for i in range(len(quality)):
 			response = urlopen(direct_url[i])
